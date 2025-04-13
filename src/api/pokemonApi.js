@@ -9,7 +9,7 @@ export const fetchPokemonList = async (offset = 0, limit = 20) => {
     );
     return response.data.results;
   } catch (error) {
-    console.error('Error fetching Pokémon list:', error);
+    console.error('Error fetching Pokemon list:', error);
     throw error;
   }
 };
@@ -19,9 +19,8 @@ export const fetchPokemonDetails = async (url) => {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.error('Error fetching Pokémon details:', error);
+    console.error('Error fetching Pokemon details:', error);
     throw error;
   }
 };
-
 

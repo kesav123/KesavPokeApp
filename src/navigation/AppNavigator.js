@@ -22,7 +22,6 @@ const AppNavigator = () => {
         name="Home"
         component={HomeScreen}
         options={{ headerShown: false }}
-       
       />
       <Stack.Screen
         name="Detail"
