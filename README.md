@@ -1,97 +1,139 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🐾 KesavPokeApp
 
-# Getting Started
+KesavPokeApp is a cross-platform mobile application built with **React Native**. This app is designed for both Android and iOS devices and demonstrates a complete working environment setup, proper version control, and platform-specific configuration for 3 sided cube -- Native task.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 📱 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- Built with **React Native CLI**
+- Supports both **Android** and **iOS**
+- Configured with:
+  - ✅ Java 17
+  - ✅ Android SDK
+  - ✅ iOS Xcode + Simulator
+- Version control with GitHub
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 🛠️ Development Environment Setup
 
-# OR using Yarn
-yarn start
+### ✅ Prerequisites
+
+- **Node.js**
+- **Java Development Kit (JDK 17)**
+- **Android Studio & SDK**
+- **Xcode (for iOS)**
+- **Git + GitHub CLI**
+- **Homebrew** (for Mac users)
+
+---
+
+## ⚙️ Android Setup
+
+### 1. Install Java 17 via Homebrew
+
+```bash
+brew install openjdk@17
+### 2. Set Java 17 as the default version
+
+```bash
+sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH="$JAVA_HOME/bin:$PATH"
 ```
 
-## Step 2: Build and run your app
+### 3. Install Android Studio
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- Download and install **Android Studio** from [here](https://developer.android.com/studio).
+- Open Android Studio and install the required SDKs and tools.
 
-### Android
+### 4. Configure Environment Variables
 
-```sh
-# Using npm
-npm run android
+Add the following lines to your shell configuration file (`~/.zshrc` or `~/.bashrc`):
 
-# OR using Yarn
-yarn android
+```bash
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
 ```
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## ⚙️ iOS Setup
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### 1. Install Xcode
 
-```sh
-bundle install
+- Download and install **Xcode** from the Mac App Store.
+- Open Xcode and install the required components.
+
+### 2. Install CocoaPods
+
+```bash
+sudo gem install cocoapods
 ```
 
-Then, and every time you update your native dependencies, run:
+### 3. Configure iOS Simulator
 
-```sh
-bundle exec pod install
+- Open Xcode, go to **Preferences > Locations**, and set the Command Line Tools to the latest version of Xcode.
+- Use the iOS Simulator to test your app.
+
+---
+
+## 🚀 Running the App
+
+### 1. Install Dependencies
+
+Run the following command to install all required dependencies:
+
+```bash
+npm install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### 2. Start the Metro Bundler
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```bash
+npx react-native start
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### 3. Run on Android
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```bash
+npx react-native run-android
+```
 
-## Step 3: Modify your app
+### 4. Run on iOS
 
-Now that you have successfully run the app, let's make changes!
+```bash
+npx react-native run-ios
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+---
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 📂 Project Structure
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+```
+KesavPokeApp/
+├── android/        # Android-specific files
+├── ios/            # iOS-specific files
+├── src/            # Application source code
+│   ├── components/ # Reusable components
+│   ├── screens/    # App screens
+│   ├── assets/     # Images, fonts, etc.
+│   └── utils/      # Utility functions
+├── package.json    # Project metadata and dependencies
+└── README.md       # Project documentation
+```
 
-## Congratulations! :tada:
+---
 
-You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
+## 🙌 Acknowledgments
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- **React Native** for providing a robust framework.
+- **OpenJDK** and **Android Studio** for development tools.
+- **Xcode** for iOS development.
 
-# Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## 🧑‍💻 Author
+Kesavraj Pandiaraj
+MSc Student | Full Stack Developer | Kesavrajpandiaraj@gmail.com
