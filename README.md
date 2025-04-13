@@ -118,7 +118,6 @@ KesavPokeApp/
 ├── src/            # Application source code
 │   ├── components/ # Reusable components
 │   ├── screens/    # App screens
-│   ├── assets/     # Images, fonts, etc.
 │   └── utils/      # Utility functions
 ├── package.json    # Project metadata and dependencies
 └── README.md       # Project documentation
